@@ -70,7 +70,7 @@ local library = {
     open = false;
     opening = false;
     hasInit = false;
-    cheatname = startupArgs.cheatname or 'octohook';
+    cheatname = startupArgs.cheatname or 'EridiumHub';
     gamename = startupArgs.gamename or 'universal';
     fileext = startupArgs.fileext or '.txt';
 }
@@ -103,7 +103,7 @@ library.themes = {
         }
     },
     {
-        name = 'Informant_V1',
+        name = 'Beta',
         theme = {
             ["Accent"]                    = fromrgb(69, 10, 166);
             ["Background"]                = fromrgb(0,0,0);
@@ -115,7 +115,7 @@ library.themes = {
             ["Group Background"]          = fromrgb(0,0,0);
             ["Selected Tab Background"]   = fromrgb(69,10,166);
             ["Unselected Tab Background"] = fromrgb(0,0,0);
-            ["Selected Tab Text"]         = fromrgb(0,0,0);
+            ["Selected Tab Text"]         = fromrgb(250,250,250);
             ["Unselected Tab Text"]       = fromrgb(82,82,82);
             ["Section Background"]        = fromrgb(18,18,18);
             ["Option Text 1"]             = fromrgb(0,0,0);
