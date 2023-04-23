@@ -129,7 +129,7 @@ library.themes = {
         }
     },
     {
-        name = 'Fatality',
+        name = 'aFatality',
         theme = {
             ['Accent']                    = fromrgb(197,7,83);
             ['Background']                = fromrgb(25,19,53);
