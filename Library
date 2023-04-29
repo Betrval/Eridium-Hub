@@ -1,10 +1,3 @@
---[[
-Octohook ui lib informant version
-Developed by liam#4567
-Edited by xz#1111
-]]
-
--- // Load
 
 local startupArgs = ({...})[1] or {}
 
@@ -79,27 +72,27 @@ library.themes = {
     {
         name = 'Default',
         theme = {
-            ["Accent"]                    = fromrgb(204, 45, 45);
-            ["Background"]                = fromrgb(18,18,18);
+            ["Accent"]                    = fromrgb(0, 0, 0);
+            ["Background"]                = fromrgb(0,0,0);
             ["Border"]                    = fromrgb(0,0,0);
             ["Border 1"]                  = fromrgb(60,60,60);
-            ["Border 2"]                  = fromrgb(18,18,18);
+            ["Border 2"]                  = fromrgb(82,82,82);
             ["Border 3"]                  = fromrgb(10,10,10);
             ["Primary Text"]              = fromrgb(255,255,255);
-            ["Group Background"]          = fromrgb(18,18,18);
+            ["Group Background"]          = fromrgb(0,0,0);
             ["Selected Tab Background"]   = fromrgb(18,18,18);
             ["Unselected Tab Background"] = fromrgb(18,18,18);
-            ["Selected Tab Text"]         = fromrgb(245,245,245);
-            ["Unselected Tab Text"]       = fromrgb(145,145,145);
-            ["Section Background"]        = fromrgb(18,18,18);
+            ["Selected Tab Text"]         = fromrgb(255,255,255);
+            ["Unselected Tab Text"]       = fromrgb(255,255,255);
+            ["Section Background"]        = fromrgb(0,0,0);
             ["Option Text 1"]             = fromrgb(255,255,255);
             ["Option Text 2"]             = fromrgb(255,255,255);
             ["Option Text 3"]             = fromrgb(255,255,255);
             ["Option Border 1"]           = fromrgb(50,50,50);
             ["Option Border 2"]           = fromrgb(0,0,0);
             ["Option Background"]         = fromrgb(23,23,23);
-            ["Risky Text"]                = fromrgb(175, 21, 21);
-            ["Risky Text Enabled"]        = fromrgb(255, 41, 41);
+            ["Risky Text"]                = fromrgb(255, 255, 255);
+            ["Risky Text Enabled"]        = fromrgb(255, 255, 255);
         }
     },
     {
@@ -696,24 +689,6 @@ function library:init()
         end
     end)
 
-    utility:Connection(inputservice.InputEnded, function(input, gpe)
-        if self.hasInit and library.open then
-            local hoverObj = utility:GetHoverObject();
-            local hoverObjData = library.drawings[hoverObj];
-
-            if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                mb1down = false;
-                button1up:Fire();
-                if hoverObj and hoverObjData then
-                    hoverObjData.MouseButton1Up:Fire(inputservice:GetMouseLocation())
-                end
-            elseif input.UserInputType == Enum.UserInputType.MouseButton2 then
-                if hoverObj and hoverObjData then
-                    hoverObjData.MouseButton2Up:Fire(inputservice:GetMouseLocation())
-                end
-            end
-        end
-    end)
 
     utility:Connection(inputservice.InputChanged, function(input, gpe)
         if input.UserInputType == Enum.UserInputType.MouseMovement then
